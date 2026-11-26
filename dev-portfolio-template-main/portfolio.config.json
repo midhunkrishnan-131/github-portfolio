@@ -1,0 +1,257 @@
+{
+  "identity": {
+    "name": "Midhun Krishnan B",
+    "barTitle": "MIDHUN KRISHNAN",
+    "terminalUser": "midhun",
+    "domain": "midhunkrishnan",
+    "tagline": "python, generative AI, software.",
+    "github": "midhunkrishnan-131",
+    "storagePrefix": "midhun"
+  },
+  "about": {
+    "bio": "Python and Generative AI developer exploring intelligent applications, backend systems, and software engineering. BCA Computer Science student at Yenepoya (Deemed to be University), online programme, expected graduation 2028. Hands-on project work in Python, REST APIs, LLM integration, structured outputs, tool calling, validation, retries, and pagination, alongside IT and technical support experience.",
+    "extra": "Thiruvananthapuram, Kerala, India · Malayalam (native), Tamil (fluent), English (conversational)"
+  },
+  "links": [
+    {
+      "label": "Email",
+      "url": "mailto:midhunmaddy84@gmail.com"
+    },
+    {
+      "label": "Phone",
+      "url": "tel:+918848993834"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/midhunkrishnan-131"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/REPLACE_ME"
+    },
+    {
+      "label": "LCAT certificate",
+      "url": "/site/certs/LCAT_Certificate_midhun_krishnan_b.pdf"
+    }
+  ],
+  "work": [
+    {
+      "when": "expected 2028",
+      "title": "BCA, Computer Science",
+      "org": "Yenepoya (Deemed to be University)",
+      "where": "Online programme",
+      "kind": "study",
+      "desc": "Bachelor of Computer Applications in Computer Science. Expected graduation 2028."
+    },
+    {
+      "when": "11/2024 – 11/2026",
+      "title": "IT / Technical Support",
+      "org": "ICICI Prudential Life Insurance",
+      "where": "Thiruvananthapuram",
+      "desc": "Day-to-day technical support and troubleshooting for computer systems and user-reported issues. Assisted with user account administration, access permissions, system checks, and server/system administration. Used TeamViewer, AnyDesk, and Remote Desktop for remote support. Scanned and digitised documents and supported electronic record management."
+    },
+    {
+      "when": "dates unlisted",
+      "title": "SEO Intern",
+      "org": "Perception",
+      "desc": "SEO internship. Dates, clients, and results were not listed in the source CV, so none are shown here."
+    }
+  ],
+  "projects": [
+    {
+      "name": "LUMO",
+      "tag": "Search · Python",
+      "desc": "AI search and research platform under active development. The repo documents keyword, semantic, hybrid, and AI-assisted search — not a finished product.",
+      "long": "LUMO is one of my main projects: an AI-powered search and research platform that is still under active development. The repository contains a FastAPI backend and a vanilla JavaScript frontend. Documented areas include keyword search, semantic search, hybrid retrieval, AI-assisted answers, source-oriented research workflows, a multi-provider AI router (Gemini, Grok, and Ollama), a knowledge graph, and a download-guardian area for URL and file checks. Those areas exist in the codebase as modules. They should be read as in-progress work, including experimental and planned research pieces, not as a production search engine.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-26",
+      "created": "2026-11-25",
+      "shots": [],
+      "stack": ["Python", "FastAPI", "JavaScript", "SQLAlchemy"],
+      "url": "https://github.com/midhunkrishnan-131/lumo-search-platform"
+    },
+    {
+      "name": "MYX AI",
+      "tag": "Security · TypeScript",
+      "desc": "Development project for an AI-assisted Windows security assessment workspace. Not all parts are implemented or production-ready.",
+      "long": "MYX AI (Windows Edition) is a development project around authorized Windows security assessment and security analysis. The repository includes a React 19 and TypeScript frontend, a FastAPI and SQLAlchemy backend, PostgreSQL with pgvector, Gemini integration, and a Windows agent package. Documented pieces include website, network, and Wi-Fi assessment concepts, evidence-backed findings, CVSS v3.1 scoring, SSRF and private-network guards, cloud-metadata protection, URL checks, SPF and DMARC parsing, and RBAC tests. A status note in the repo separates completed, scaffolded, and runtime-dependent work. This is not a production security product.",
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-22",
+      "created": "2026-11-14",
+      "shots": [],
+      "stack": ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Gemini", "SQLAlchemy"],
+      "url": "https://github.com/midhunkrishnan-131/myx-ai-windows"
+    },
+    {
+      "name": "CodeDoctor AI",
+      "tag": "Debugging · TypeScript",
+      "desc": "AI-assisted Python debugging with a complete-answer mode, a Socratic hint mode, and isolated execution.",
+      "long": "CodeDoctor AI is an AI-assisted coding and debugging project. It includes a React and TypeScript interface with Monaco Editor, a FastAPI backend, isolated Python execution with configurable timeouts, loop protection, memory limits, and standard-input support, plus code-health checks, anomaly detection, diagnosis history, and session restore. AI diagnosis has a complete-answer mode and a Socratic logic-hint mode, with Groq and a Gemini fallback.",
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-11",
+      "created": "2026-11-11",
+      "shots": [],
+      "stack": ["React", "TypeScript", "Monaco Editor", "FastAPI", "Python", "Groq API", "SQLite"],
+      "url": "https://github.com/midhunkrishnan-131/CodeDoctor--AI"
+    },
+    {
+      "name": "Multimodal Benchmark",
+      "tag": "Evaluation · Python",
+      "desc": "Instrumented experiments for image understanding, speech, latency, and an STT-to-LLM-to-TTS pipeline.",
+      "long": "Multimodal Pipeline Benchmark measures vision, speech, and latency. It covers image-understanding experiments, image resolution and cost experiments, speech transcription, speech generation, and end-to-end voice workflows. Recorded measurements include image-token usage, estimated cost, chunked transcription latency, word error rate against a manual reference, and streaming TTS time-to-first-audio. It also compares sequential and concurrent STT-to-LLM-to-TTS pipelines and includes deterministic failure-handling demonstrations.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-22",
+      "created": "2026-11-22",
+      "shots": [],
+      "stack": ["Python", "OpenAI API"],
+      "url": "https://github.com/midhunkrishnan-131/multi_model"
+    },
+    {
+      "name": "DevAssist",
+      "tag": "CLI · Python",
+      "desc": "Engineering-focused CLI LLM client with multi-turn chat, streaming, retries, and validated tool calls.",
+      "long": "DevAssist is a command-line LLM client. The published client uses the OpenAI API, with multi-turn conversation history, a stateless request demonstration, streamed responses, token and cost reporting, context trimming, retries on 429 and 5xx responses, JSON-schema invoice extraction, and a validated calculator tool call. Built with Python and Pydantic.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-22",
+      "created": "2026-11-09",
+      "shots": [],
+      "stack": ["Python", "OpenAI API", "Pydantic"],
+      "url": "https://github.com/midhunkrishnan-131/LLM-cli-client"
+    },
+    {
+      "name": "API Client",
+      "tag": "HTTP · Python",
+      "desc": "Reusable REST client with session reuse, retries, structured logging, and generator-based pagination.",
+      "long": "Production-Grade API Client is a reusable Python REST client. It reuses a requests session, retries 429 and 5xx responses with exponential backoff and jitter, honors Retry-After, logs in a structured form, validates environment configuration, fails fast on other 4xx responses, and paginates with a generator. Dependencies include Requests and python-dotenv.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-22",
+      "created": "2026-11-10",
+      "shots": [],
+      "stack": ["Python", "Requests", "python-dotenv"],
+      "url": "https://github.com/midhunkrishnan-131/api-client-project"
+    },
+    {
+      "name": "Invoice Extractor",
+      "tag": "Documents · Python",
+      "desc": "Extracts invoice fields from PDFs and images, checks them arithmetically, and routes documents to accepted or needs review.",
+      "long": "Public repository description: extracts invoice fields from PDFs and images, checks them arithmetically, and routes documents to accepted or needs review.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-23",
+      "created": "2026-11-23",
+      "more": true,
+      "shots": [],
+      "stack": ["Python"],
+      "url": "https://github.com/midhunkrishnan-131/invoice-extractor"
+    },
+    {
+      "name": "Chart Honesty Lab",
+      "tag": "Charts · Python",
+      "desc": "Practice lab on honest vs misleading charts, overplotting, and Anscombe's quartet, built with Matplotlib.",
+      "long": "Public repository description: practice lab on honest vs misleading charts, overplotting, and Anscombe's quartet, built with Matplotlib.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-17",
+      "created": "2026-11-17",
+      "more": true,
+      "shots": [],
+      "stack": ["Python", "Matplotlib"],
+      "url": "https://github.com/midhunkrishnan-131/chart-honesty-lab"
+    },
+    {
+      "name": "Data Cleaning",
+      "tag": "Data · Python",
+      "desc": "Python data-cleaning project with a cleaning script and sample sales CSV files.",
+      "long": "The repository contains cleaning.py, a cleaning log, and sample sales CSV files (messy, cleaned, and long). No separate feature write-up was published, so this page does not add steps beyond those files.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-22",
+      "created": "2026-11-11",
+      "more": true,
+      "shots": [],
+      "stack": ["Python"],
+      "url": "https://github.com/midhunkrishnan-131/Data-cleaning-"
+    },
+    {
+      "name": "Weather CLI",
+      "tag": "CLI · Python",
+      "desc": "Python CLI for current conditions from OpenWeatherMap, with the key read from the environment.",
+      "long": "weather_cli.py requests current conditions from OpenWeatherMap. The API key is read from a .env file, requests set a timeout, and failure modes have their own messages. There is no hard-coded key in the source.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-12",
+      "created": "2026-11-12",
+      "more": true,
+      "shots": [],
+      "stack": ["Python", "Requests"],
+      "url": "https://github.com/midhunkrishnan-131/weather-cli"
+    },
+    {
+      "name": "File Organizer",
+      "tag": "Automation · Python",
+      "desc": "Python automation project.",
+      "long": "The repository README describes this as Python automation. No further feature list was published.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-09-03",
+      "created": "2026-09-03",
+      "more": true,
+      "shots": [],
+      "stack": ["Python"],
+      "url": "https://github.com/midhunkrishnan-131/file_organizer"
+    },
+    {
+      "name": "NumPy Vectorisation",
+      "tag": "Coursework · Python",
+      "desc": "NumPy Performance & Vectorisation Assignment.",
+      "long": "Coursework repository. The GitHub description is NumPy Performance & Vectorisation Assignment.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushed": "2026-11-22",
+      "created": "2026-11-20",
+      "more": true,
+      "shots": [],
+      "stack": ["Python", "NumPy"],
+      "url": "https://github.com/midhunkrishnan-131/numpy_vectorisation_assignment"
+    }
+  ],
+  "talks": [
+    {
+      "name": "LCAT",
+      "place": "Labmentix",
+      "when": "Nov 2026",
+      "desc": "Certificate of Participation in the Labmentix Common Aptitude Test (Internship Common Aptitude Test), 25 November 2026. Participation only — not a pass result or a professional qualification. Certificate number LCAT-2026-5204E5.",
+      "url": "/site/certs/LCAT_Certificate_midhun_krishnan_b.pdf",
+      "photos": []
+    }
+  ],
+  "wallRepos": [],
+  "siteStack": [
+    {
+      "name": "Vanilla JS",
+      "via": "zero-build frontend"
+    },
+    {
+      "name": "Canvas 2D",
+      "via": "intro + contribution ink"
+    }
+  ]
+}

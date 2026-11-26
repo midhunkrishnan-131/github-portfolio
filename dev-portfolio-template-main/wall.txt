@@ -1,0 +1,139 @@
+"""LUMO FastAPI application."""
+import hmac
+import threading
+import time
+from collections import defaultdict, deque
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
+from fastapi import APIRouter, FastAPI, Request, Response
+from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
+from fastapi.responses import JSONResponse
+from starlette.exceptions import HTTPException as StarletteHTTPException
+from app.api.routes.health import (
+    HealthResponse,
+    ReadinessResponse,
+    health_payload,
+    readiness_payload,
+    router as health_router,
+)
+from app.api.routes.crawler import router as crawler_router
+from app.api.routes.documents import router as documents_router
+from app.api.routes.search import router as search_router
+from app.api.routes.history import router as history_router
+from app.api.routes.semantic import router as semantic_router
+from app.api.routes.ai_search import router as ai_search_router
+from app.api.routes.research import router as research_router
+from app.api.routes.guardian import router as guardian_router
+from app.api.routes.graph import router as graph_router
+from app.api.routes.workspace import router as workspace_router
+from app.api.routes.extension import router as extension_router
+from app.api.routes.local_ai import router as local_ai_router
+from app.api.routes.automation import (
+    automations_router,
+    executions_router,
+    notifications_router,
+)
+"""
+CodeDoctor AI - FastAPI Main Application
+Entry point for the Python backend.
+"""
+import os
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from backend.routes.api import router
+from backend.database.db import init_db
+app = FastAPI(
+    title="CodeDoctor AI Backend API",
+    description="Python Code Execution & Dual-Mode AI Diagnosis Engine",
+    version="1.0.0"
+)
+# CORS configuration for web IDE client
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+# Initialize SQLite database
+init_db()
+# Mount API routes
+app.include_router(router)
+from fastapi.responses import RedirectResponse
+# Mount vanilla HTML, CSS, and JS frontend
+vanilla_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "html-css-js")
+if os.path.exists(vanilla_dir):
+    app.mount("/vanilla", StaticFiles(directory=vanilla_dir, html=True), name="vanilla")
+@app.get("/")
+"""Engineering-focused CLI chat client using OpenAI Chat Completions."""
+from __future__ import annotations
+import json, os, random, sys, time
+from pathlib import Path
+from typing import Any
+from dotenv import load_dotenv
+from openai import OpenAI, APIStatusError, RateLimitError
+from pydantic import BaseModel, Field
+ROOT = Path(__file__).resolve().parent
+load_dotenv(ROOT / ".env")
+MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+INPUT_RATE = float(os.getenv("INPUT_USD_PER_MILLION", "0.15"))
+OUTPUT_RATE = float(os.getenv("OUTPUT_USD_PER_MILLION", "0.60"))
+MAX_OUTPUT = int(os.getenv("MAX_OUTPUT_TOKENS", "500"))
+CONTEXT_BUDGET = int(os.getenv("CONTEXT_TOKEN_BUDGET", "6000"))
+SYSTEM_PROMPT = "You are DevAssist, a concise, friendly programming tutor. Explain concepts clearly and ask clarifying questions when needed. Never claim to have executed code you have not run."
+class InvoiceFields(BaseModel):
+    invoice_number: str | None = None
+    invoice_date: str | None = None
+    vendor: str | None = None
+    total: float | None = None
+    currency: str | None = None
+class CalculatorArgs(BaseModel):
+    operation: str = Field(pattern="^(add|subtract|multiply|divide)$")
+    a: float = Field(ge=-1_000_000, le=1_000_000)
+    b: float = Field(ge=-1_000_000, le=1_000_000)
+class CLI:
+    def __init__(self, client: OpenAI):
+        self.client = client
+        self.history: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
+        self.total_cost = 0.0
+    def retry(self, fn):
+        for attempt in range(5):
+            try:
+                return fn()
+import os
+import time
+import logging
+import random
+import requests
+from typing import Optional, Dict, Any, Generator
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry as UrllibRetry
+from dotenv import load_dotenv
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+class APIClient:
+    """
+    Reusable HTTP client for REST APIs with production-grade error handling.
+    Features:
+    - Session reuse with persistent headers
+    - Exponential backoff with jitter for 429 and 5xx errors
+    - Respects Retry-After header
+    - Pagination support
+    - .env-based configuration with loud failure on missing keys
+    """
+    def __init__(self, base_url: str, api_key_env_var: str = "API_KEY",
+                 timeout: int = 10, max_retries: int = 5):
+        """
+        Initialize the API client.
+        Args:
+            base_url: Base URL for all requests
+            api_key_env_var: Environment variable name for API key
+            timeout: Request timeout in seconds
+            max_retries: Maximum retry attempts
